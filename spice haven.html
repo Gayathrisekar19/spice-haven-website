@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spice Haven Restaurant</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-orange-50 font-sans">
+
+<!-- NAVBAR -->
+
+<nav class="bg-orange-600 text-white p-4 flex justify-between items-center">
+
+<h1 class="text-2xl font-bold">Spice Haven</h1>
+
+<div class="space-x-6">
+
+<a href="#home">Home</a>
+<a href="#menu">Menu</a>
+<a href="#about">About</a>
+
+<button onclick="openLogin()" class="bg-white text-orange-600 px-3 py-1 rounded">
+Login
+</button>
+
+<button onclick="openSignup()" class="bg-white text-orange-600 px-3 py-1 rounded">
+Sign Up
+</button>
+
+</div>
+</nav>
+
+
+<!-- LOGIN -->
+
+<div id="loginBox" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+
+<div class="bg-white p-6 rounded w-80">
+
+<h2 class="text-xl font-bold mb-4">Login</h2>
+
+<input id="loginEmail" type="email" placeholder="Email" class="border p-2 w-full mb-3">
+
+<input id="loginPass" type="password" placeholder="Password" class="border p-2 w-full mb-3">
+
+<button onclick="login()" class="bg-orange-600 text-white w-full p-2 rounded">Login</button>
+
+<button onclick="closeLogin()" class="mt-2 text-sm">Close</button>
+
+</div>
+</div>
+
+
+<!-- SIGNUP -->
+
+<div id="signupBox" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+
+<div class="bg-white p-6 rounded w-80">
+
+<h2 class="text-xl font-bold mb-4">Create Account</h2>
+
+<input id="signupEmail" type="email" placeholder="Email" class="border p-2 w-full mb-3">
+
+<input id="signupPass" type="password" placeholder="Password" class="border p-2 w-full mb-3">
+
+<button onclick="signup()" class="bg-orange-600 text-white w-full p-2 rounded">
+Create Account
+</button>
+
+<button onclick="closeSignup()" class="mt-2 text-sm">Close</button>
+
+</div>
+</div>
+
+
+<!-- HERO -->
+
+<section id="home" class="text-center p-12">
+
+<h2 class="text-4xl font-bold mb-4">
+Welcome to Spice Haven
+</h2>
+
+<p class="mb-6">
+Experience delicious food with authentic flavors
+</p>
+
+<img src="https://ministryofcurry.com/wp-content/uploads/2020/07/panerr-makhani_-scaled.jpg"
+class="mx-auto rounded-xl w-2/3">
+
+</section>
+
+
+<!-- MENU -->
+
+<section id="menu" class="p-10">
+
+<h2 class="text-3xl font-bold text-center mb-8">Our Menu</h2>
+
+
+<!-- VEG -->
+
+<h3 class="text-2xl font-bold mb-4">Veg Dishes</h3>
+
+<div class="grid md:grid-cols-3 gap-6">
+
+<div class="bg-white p-4 rounded shadow">
+
+<img src="https://www.bigbasket.com/media/uploads/recipe/w-l/1030_1.jpg" class="rounded">
+
+<h4 class="font-bold mt-2">Veg Biryani</h4>
+
+<p class="text-gray-500 line-through">₹180</p>
+
+<p class="text-green-600 font-bold">Offer ₹150</p>
+
+<button onclick="addCart()" class="bg-orange-600 text-white px-3 py-1 mt-2 rounded">
+Add to Cart
+</button>
+
+<button class="bg-green-600 text-white px-3 py-1 mt-2 rounded">
+Buy Now
+</button>
+
+</div>
+
+
+<div class="bg-white p-4 rounded shadow">
+
+<img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7" class="rounded">
+
+<h4 class="font-bold mt-2">Paneer Butter Masala</h4>
+
+<p class="text-gray-500 line-through">₹200</p>
+
+<p class="text-green-600 font-bold">Offer ₹180</p>
+
+<button onclick="addCart()" class="bg-orange-600 text-white px-3 py-1 mt-2 rounded">
+Add to Cart
+</button>
+
+<button class="bg-green-600 text-white px-3 py-1 mt-2 rounded">
+Buy Now
+</button>
+
+</div>
+
+
+<div class="bg-white p-4 rounded shadow">
+
+<img src="https://www.hookedonheat.com/wp-content/uploads/2006/03/Gobi-Manchurian-HOHV.jpg" class="rounded">
+
+<h4 class="font-bold mt-2">Gobi Manchurian</h4>
+
+<p class="text-gray-500 line-through">₹160</p>
+
+<p class="text-green-600 font-bold">Offer ₹140</p>
+
+<button onclick="addCart()" class="bg-orange-600 text-white px-3 py-1 mt-2 rounded">
+Add to Cart
+</button>
+
+<button class="bg-green-600 text-white px-3 py-1 mt-2 rounded">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+<!-- NON VEG -->
+
+<h3 class="text-2xl font-bold mt-10 mb-4">Non-Veg</h3>
+
+<div class="grid md:grid-cols-3 gap-6">
+
+<div class="bg-white p-4 rounded shadow">
+
+<img src="https://www.licious.in/blog/wp-content/uploads/2022/06/chicken-hyderabadi-biryani-01-750x750.jpg" class="rounded">
+
+<h4 class="font-bold mt-2">Chicken Biryani</h4>
+
+<p class="text-gray-500 line-through">₹260</p>
+
+<p class="text-green-600 font-bold">Offer ₹220</p>
+
+<button onclick="addCart()" class="bg-orange-600 text-white px-3 py-1 mt-2 rounded">
+Add to Cart
+</button>
+
+<button class="bg-green-600 text-white px-3 py-1 mt-2 rounded">
+Buy Now
+</button>
+
+</div>
+
+
+<div class="bg-white p-4 rounded shadow">
+
+<img src="https://spiceindiaonline.com/wp-content/uploads/2021/05/Tandoori-Chicken-20.jpg" class="rounded">
+
+<h4 class="font-bold mt-2">Grilled Chicken</h4>
+
+<p class="text-gray-500 line-through">₹300</p>
+
+<p class="text-green-600 font-bold">Offer ₹260</p>
+
+<button onclick="addCart()" class="bg-orange-600 text-white px-3 py-1 mt-2 rounded">
+Add to Cart
+</button>
+
+<button class="bg-green-600 text-white px-3 py-1 mt-2 rounded">
+Buy Now
+</button>
+
+</div>
+
+
+<div class="bg-white p-4 rounded shadow">
+
+<img src="https://spiceindiaonline.com/wp-content/uploads/2017/04/Meen-Varuval-Tilapia-Fish-Fry-2.jpg" class="rounded">
+
+<h4 class="font-bold mt-2">Fish Fry</h4>
+
+<p class="text-gray-500 line-through">₹240</p>
+
+<p class="text-green-600 font-bold">Offer ₹200</p>
+
+<button onclick="addCart()" class="bg-orange-600 text-white px-3 py-1 mt-2 rounded">
+Add to Cart
+</button>
+
+<button class="bg-green-600 text-white px-3 py-1 mt-2 rounded">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+<!-- DRINKS -->
+
+<h3 class="text-2xl font-bold mt-10 mb-4">Juice & Coffee</h3>
+
+<div class="grid md:grid-cols-3 gap-6">
+
+<div class="bg-white p-4 rounded shadow">
+
+<img src="https://cdn.healthyrecipes101.com/recipes/images/juices/orange-juice-apple-cider-vinegar-honey-recipe-clavzz7uu001z551b961w6b6a.webp" class="rounded">
+
+<h4 class="font-bold mt-2">Orange Juice</h4>
+
+<p class="font-bold">₹80</p>
+
+<button onclick="addCart()" class="bg-orange-600 text-white px-3 py-1 mt-2 rounded">
+Add to Cart
+</button>
+
+</div>
+
+
+<div class="bg-white p-4 rounded shadow">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM19D4ys3BnojgW3K2bwW_UXPv6CGccEPcVw&s" class="rounded">
+
+<h4 class="font-bold mt-2">Mango Juice</h4>
+
+<p class="font-bold">₹90</p>
+
+<button onclick="addCart()" class="bg-orange-600 text-white px-3 py-1 mt-2 rounded">
+Add to Cart
+</button>
+
+</div>
+
+
+<div class="bg-white p-4 rounded shadow">
+
+<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" class="rounded">
+
+<h4 class="font-bold mt-2">Coffee</h4>
+
+<p class="font-bold">₹70</p>
+
+<button onclick="addCart()" class="bg-orange-600 text-white px-3 py-1 mt-2 rounded">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about" class="text-center p-10">
+
+<h2 class="text-3xl font-bold mb-4">About Spice Haven</h2>
+
+<p>
+Spice Haven is a digital restaurant concept designed to demonstrate how
+restaurants can use websites and digital marketing tools to reach customers online.
+</p>
+
+</section>
+
+
+<!-- CART -->
+
+<div class="fixed bottom-5 right-5 bg-orange-600 text-white p-4 rounded">
+
+Cart Items:
+<span id="cartCount">0</span>
+
+</div>
+
+
+<script>
+
+let cart = 0
+
+function addCart(){
+
+cart++
+
+document.getElementById("cartCount").innerText = cart
+
+}
+
+
+function openLogin(){
+
+document.getElementById("loginBox").classList.remove("hidden")
+
+}
+
+function closeLogin(){
+
+document.getElementById("loginBox").classList.add("hidden")
+
+}
+
+
+function openSignup(){
+
+document.getElementById("signupBox").classList.remove("hidden")
+
+}
+
+function closeSignup(){
+
+document.getElementById("signupBox").classList.add("hidden")
+
+}
+
+
+function signup(){
+
+let email = document.getElementById("signupEmail").value
+
+let pass = document.getElementById("signupPass").value
+
+localStorage.setItem("email", email)
+
+localStorage.setItem("pass", pass)
+
+alert("Account Created")
+
+closeSignup()
+
+}
+
+
+function login(){
+
+let email = document.getElementById("loginEmail").value
+
+let pass = document.getElementById("loginPass").value
+
+if(email === localStorage.getItem("email") && pass === localStorage.getItem("pass")){
+
+alert("Login Successful")
+
+closeLogin()
+
+}
+
+else{
+
+alert("Invalid Login")
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
